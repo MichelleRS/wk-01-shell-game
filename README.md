@@ -53,8 +53,7 @@
 ### Refactoring
 
 -   Build `handleGuess()` function at end of code [complete]
--   Refactor buttons to be one eventListener
--   Update HTML with container `id` attributes
+-   Refactor eventListeners and get correct ball location in `handleGuess()` [complete]
 
 ## Rubric Tasks and Point Values
 
