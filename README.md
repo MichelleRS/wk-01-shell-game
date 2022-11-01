@@ -44,7 +44,9 @@
 -   Start event listener for button1 with random location for ball [complete]
 -   Add style to shell section elements [complete]
 -   Create reset function [complete]
--   Build HTML for stats section
+-   Build HTML for stats section [complete]
+-   Get DOM elements for stats and initialize elements for state [complete]
+-   Increment total and wins and update the view with display function
 
 ## Rubric Tasks and Point Values
 

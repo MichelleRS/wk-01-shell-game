@@ -6,7 +6,14 @@ const shell1 = document.getElementById('shell-1');
 const shell2 = document.getElementById('shell-2');
 const shell3 = document.getElementById('shell-3');
 
+// results
+const winsEl = document.getElementById('wins');
+const lossesEl = document.getElementById('losses');
+const totalEl = document.getElementById('total');
+
 /* State */
+let wins = 0;
+let total = 0;
 
 /* Events */
 button1.addEventListener('click', () => {
