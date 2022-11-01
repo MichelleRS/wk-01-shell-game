@@ -14,65 +14,25 @@ const lossesEl = document.getElementById('losses');
 const totalEl = document.getElementById('total');
 
 /* State */
+const hidingPlaces = ['shell-1', 'shell-2', 'shell-3'];
+
 let wins = 0;
 let total = 0;
 
 /* Events */
 button1.addEventListener('click', () => {
-    // increment total on button click
-    total++;
-    // reset shells when button is clicked
-    resetShells();
-    // generate a random location for the ball (number between 1 and 3)
     const ballLocation = Math.ceil(Math.random() * 3);
-    //  add .reveal to img that lines up with random location (if..else)
-    if (ballLocation === 1) {
-        wins++;
-        shell1.classList.add('reveal');
-    } else if (ballLocation === 2) {
-        shell2.classList.add('reveal');
-    } else {
-        shell3.classList.add('reveal');
-    }
-    displayResults();
+    handleGuess(ballLocation, 'shell-1');
 });
 
 button2.addEventListener('click', () => {
-    // increment total on button click
-    total++;
-    // reset shells when button is clicked
-    resetShells();
-    // generate a random location for the ball (number between 1 and 3)
     const ballLocation = Math.ceil(Math.random() * 3);
-    //  add .reveal to img that lines up with random location (if..else)
-    if (ballLocation === 2) {
-        wins++;
-        shell2.classList.add('reveal');
-    } else if (ballLocation === 1) {
-        shell1.classList.add('reveal');
-    } else {
-        shell3.classList.add('reveal');
-    }
-    displayResults();
+    handleGuess(ballLocation, 'shell-2');
 });
 
 button3.addEventListener('click', () => {
-    // increment total on button click
-    total++;
-    // reset shells when button is clicked
-    resetShells();
-    // generate a random location for the ball (number between 1 and 3)
     const ballLocation = Math.ceil(Math.random() * 3);
-    //  add .reveal to img that lines up with random location (if..else)
-    if (ballLocation === 3) {
-        wins++;
-        shell3.classList.add('reveal');
-    } else if (ballLocation === 1) {
-        shell1.classList.add('reveal');
-    } else {
-        shell2.classList.add('reveal');
-    }
-    displayResults();
+    handleGuess(ballLocation, 'shell-3');
 });
 
 function resetShells() {
@@ -86,6 +46,21 @@ function displayResults() {
     winsEl.textContent = wins;
     lossesEl.textContent = total - wins;
     totalEl.textContent = total;
+}
+
+function handleGuess(correctAnswer, userGuess) {
+    // move shells to start position
+    resetShells();
+    // increment total guesses
+    total++;
+
+    const correctBallLocation = document.getElementById(`shell-${correctAnswer}`);
+    correctBallLocation.classList.add('reveal');
+
+    if (userGuess === correctAnswer) {
+        wins++;
+    }
+    displayResults();
 }
 
 // (don't forget to call any display functions you want to run on page load!)
