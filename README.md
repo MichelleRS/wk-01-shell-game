@@ -47,6 +47,7 @@
 -   Build HTML for stats section [complete]
 -   Get DOM elements for stats and initialize elements for state [complete]
 -   Increment total and wins and display results for user [complete]
+-   Get DOM elements and create event listener for button2 [complete]
 
 ## Rubric Tasks and Point Values
 
