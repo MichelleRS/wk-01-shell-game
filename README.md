@@ -62,3 +62,7 @@
 -   On click, see the ball revealed, clearing out the previous correct guess style 3
 -   `displayResults` function for displaying the updated state 3
 -   `reset` function for resetting the styles that display the correct location
+
+## Attributions
+
+Clker-Free-Vector-Images. [_Purple Seashell._](https://pixabay.com/vectors/seashell-clam-fan-purple-306124/). Pixabay.
