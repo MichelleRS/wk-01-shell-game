@@ -39,7 +39,8 @@
 
 ## Current Workflow
 
--   Build HTML for shell section
+-   Build HTML for shell section [complete]
+-   Start style and get DOM elements for button1 and images
 
 ## Rubric Tasks and Point Values
 

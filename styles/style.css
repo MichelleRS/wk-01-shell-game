@@ -1,0 +1,9 @@
+img {
+    max-width: 200px;
+}
+
+.shells {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
