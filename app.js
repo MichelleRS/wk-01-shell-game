@@ -21,18 +21,21 @@ let total = 0;
 
 /* Events */
 button1.addEventListener('click', () => {
-    const ballLocation = Math.ceil(Math.random() * 3);
-    handleGuess(ballLocation, 'shell-1');
+    const ballLocation = Math.floor(Math.random() * 3);
+    const answer = hidingPlaces[ballLocation];
+    handleGuess(answer, 'shell-1');
 });
 
 button2.addEventListener('click', () => {
     const ballLocation = Math.ceil(Math.random() * 3);
-    handleGuess(ballLocation, 'shell-2');
+    const answer = hidingPlaces[ballLocation];
+    handleGuess(answer, 'shell-2');
 });
 
 button3.addEventListener('click', () => {
     const ballLocation = Math.ceil(Math.random() * 3);
-    handleGuess(ballLocation, 'shell-3');
+    const answer = hidingPlaces[ballLocation];
+    handleGuess(answer, 'shell-3');
 });
 
 function resetShells() {
@@ -54,7 +57,7 @@ function handleGuess(correctAnswer, userGuess) {
     // increment total guesses
     total++;
 
-    const correctBallLocation = document.getElementById(`shell-${correctAnswer}`);
+    const correctBallLocation = document.getElementById(`${correctAnswer}`);
     correctBallLocation.classList.add('reveal');
 
     if (userGuess === correctAnswer) {
