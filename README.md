@@ -43,7 +43,8 @@
 -   Start style and get DOM elements for button1 and images [complete]
 -   Start event listener for button1 with random location for ball [complete]
 -   Add style to shell section elements [complete]
--   Create reset function
+-   Create reset function [complete]
+-   Build HTML for stats section
 
 ## Rubric Tasks and Point Values
 
