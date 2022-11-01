@@ -88,4 +88,19 @@ function displayResults() {
     totalEl.textContent = total;
 }
 
+function handleGuess(correctAnswer, userGuess) {
+    // move shells to start position
+    resetShells();
+    // increment total guesses
+    total++;
+
+    const correctBallLocation = document.getElementById(`${correctAnswer}-container`);
+    correctBallLocation.classList.add('reveal');
+
+    if (userGuess === correctAnswer) {
+        wins++;
+    }
+    displayResults();
+}
+
 // (don't forget to call any display functions you want to run on page load!)

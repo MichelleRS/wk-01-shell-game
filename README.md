@@ -50,6 +50,12 @@
 -   Get DOM elements and create event listener for button2 [complete]
 -   Get DOM elements and create event listener for button3 [complete]
 
+### Refactoring
+
+-   Build `handleGuess()` function at end of code [complete]
+-   Refactor buttons to be one eventListener
+-   Update HTML with container `id` attributes
+
 ## Rubric Tasks and Point Values
 
 ### Code Quality / Grading Requirements
