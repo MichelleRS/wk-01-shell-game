@@ -10,6 +10,8 @@ const shell3 = document.getElementById('shell-3');
 
 /* Events */
 button1.addEventListener('click', () => {
+    // reset shells when button is clicked
+    resetShells();
     // generate a random location for the ball (number between 1 and 3)
     const ballLocation = Math.ceil(Math.random() * 3);
     //  add .reveal to img that lines up with random location (if..else)
@@ -21,6 +23,12 @@ button1.addEventListener('click', () => {
         shell3.classList.add('reveal');
     }
 });
+
+function resetShells() {
+    shell1.classList.remove('reveal');
+    shell2.classList.remove('reveal');
+    shell3.classList.remove('reveal');
+}
 
 /* Display Functions */
 
