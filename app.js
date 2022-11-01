@@ -17,18 +17,22 @@ let total = 0;
 
 /* Events */
 button1.addEventListener('click', () => {
+    // increment total on button click
+    total++;
     // reset shells when button is clicked
     resetShells();
     // generate a random location for the ball (number between 1 and 3)
     const ballLocation = Math.ceil(Math.random() * 3);
     //  add .reveal to img that lines up with random location (if..else)
     if (ballLocation === 1) {
+        wins++;
         shell1.classList.add('reveal');
     } else if (ballLocation === 2) {
         shell2.classList.add('reveal');
     } else {
         shell3.classList.add('reveal');
     }
+    displayResults();
 });
 
 function resetShells() {
@@ -38,5 +42,10 @@ function resetShells() {
 }
 
 /* Display Functions */
+function displayResults() {
+    winsEl.textContent = wins;
+    lossesEl.textContent = total - wins;
+    totalEl.textContent = total;
+}
 
 // (don't forget to call any display functions you want to run on page load!)
