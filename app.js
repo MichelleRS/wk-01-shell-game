@@ -27,13 +27,13 @@ button1.addEventListener('click', () => {
 });
 
 button2.addEventListener('click', () => {
-    const ballLocation = Math.ceil(Math.random() * 3);
+    const ballLocation = Math.floor(Math.random() * 3);
     const answer = hidingPlaces[ballLocation];
     handleGuess(answer, 'shell-2');
 });
 
 button3.addEventListener('click', () => {
-    const ballLocation = Math.ceil(Math.random() * 3);
+    const ballLocation = Math.floor(Math.random() * 3);
     const answer = hidingPlaces[ballLocation];
     handleGuess(answer, 'shell-3');
 });
