@@ -1,27 +1,79 @@
-## The Golden Rule:
+# Week 01: Shell Game
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+## Expected Layout
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+![wireframe of shell game](./assets/expected-layout.png)
 
-## Making a plan
+### HTML
 
-1. **Make a drawing of your app. Simple "wireframes"**
-1. **Look at the drawing and name the HTML elements you'll need to realize your vision**
-1. **Look at the drawing and imagine using the app. What _state_ do you need to track?**
-1. **For each HTML element ask: Why do I need this? (i.e., "we need div to display the results in")**
-1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How" (i.e., `resultsEl.textContent = newResults`)**
-1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change? Does any DOM update?**
-1. **Think about how to validate each of your features according to a Definition of Done. (Hint: console.log usually helps here.)**
-1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+`main`
 
-Additional considerations:
+-   `h1`
 
--   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
--   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
-    -   What are the key/value pairs?
-    -   What arrays might you need?
-    -   What needs to live in a persistence layer?
--   Is there some state we need to initialize?
--   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+`> section.shells > .shell`:
+
+-   `img#shell-1` + `.ball` + `button#button-1`
+
+-   `img#shell-2` + `.ball` + `button#button-2`
+
+-   `img#shell-3` + `.ball` + `button#button-3`
+
+`^ section.stats`:
+
+-   `divs` with `spans` for `#wins`, `#losses`, `#total`
+
+### State
+
+-   wins
+-   total
+-   losses (derived state - calculated from wins and total)
+
+### Events
+
+-   button clicks (user guess)
+    -   increment total
+    -   generate a random location for the ball (number between 1 and 3)
+    -   take that location and add `.reveal` class to `img`
+        -   If lines up with user guess, increment the wins
+    -   remove `.reveal` on all shells to reset the game
+
+## Workflow
+
+-   [x] Build HTML for shell section
+-   [x] Start style and get DOM elements for button1 and images
+-   [x] Start event listener for button1 with random location for ball
+-   [x] Add style to shell section elements
+-   [x] Create reset function
+-   [x] Build HTML for stats section
+-   [x] Get DOM elements for stats and initialize elements for state
+-   [x] Increment total and wins and display results for user
+-   [x] DOM elements and create event listener for button2
+-   [x] Get DOM elements and create event listener for button3
+
+### Refactoring
+
+-   [x] Build `handleGuess()` function at end of code
+-   [x] Refactor eventListeners and get correct ball location in `handleGuess()`
+
+## Rubric Tasks and Point Values
+
+### Code Quality / Grading Requirements
+
+-   [x] Open PR from dev to main with your changes 0.5
+-   [x] Preview deploy from Netlify showing on your PR 0.5
+-   [x] Clear commit history 1
+-   [x] Good naming conventions and code is easy to read 1
+-   [x] Effective use of CSS and semantic HTML 2
+
+### Code Requirements
+
+-   [x] On clicking a hiding place button, the total number of guesses increment 2
+-   [x] On clicking the correct shell button, the total number of correct guesses increment 2
+-   [x] On clicking the incorrect shell button, the number of incorrect guesses increments 2
+-   [x] On click, see the ball revealed, clearing out the previous correct guess style 3
+-   [x] `displayResults` function for displaying the updated state 3
+-   [x] `reset` function for resetting the styles that display the correct location
+
+## Attributions
+
+Clker-Free-Vector-Images. [_Purple Seashell._](https://pixabay.com/vectors/seashell-clam-fan-purple-306124/). Pixabay.
